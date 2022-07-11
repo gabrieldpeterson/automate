@@ -10,6 +10,9 @@ driver.maximize_window()
 message_input = driver.find_element(by=By.ID, value='user-message')
 message_input.send_keys('test text')
 
+message_button = driver.find_element(by=By.XPATH, value='//button[normalize-space()="Show Message"]')
+message_button.click()
+
 # Don't kill browser immediately after running
 while True:
     pass
