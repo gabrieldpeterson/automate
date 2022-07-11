@@ -1,16 +1,15 @@
-# This is a sample Python script.
-
-# Press ⌃R to execute it or replace it with your code.
-# Press Double ⇧ to search everywhere for classes, files, tool windows, actions, and settings.
+from selenium import webdriver
+from selenium.webdriver.common.by import By
 
 
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press ⌘F8 to toggle the breakpoint.
+driver = webdriver.Safari()
 
+driver.get('https://demo.seleniumeasy.com/basic-first-form-demo.html')
+driver.maximize_window()
 
-# Press the green button in the gutter to run the script.
-if __name__ == '__main__':
-    print_hi('PyCharm')
+message_input = driver.find_element(by=By.ID, value='user-message')
+message_input.send_keys('test text')
 
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
+# Don't kill browser immediately after running
+while True:
+    pass
